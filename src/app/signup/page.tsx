@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { FormEvent, SyntheticEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { NextFetchEvent } from "next/server";
 
 export default function Signup() {
   const [user, setUser] = useState({
@@ -16,21 +17,20 @@ export default function Signup() {
   const [buttonDisbaled, setButtonDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  async function onSignUp() {
-    console.log(user);
+  async function onSignUp(e: FormEvent) {
+    e.preventDefault();
     try {
       setLoading(true);
       const res = await axios.post("/api/users/signup", user);
       console.log("data", res.data);
       alert("user created");
-      router.push("/");
+      router.push("/login");
     } catch (error: any) {
       console.log(error.message, "Error message, Signup");
       toast.error(error.message);
     } finally {
       setLoading(false);
     }
-    console.log("signup completed");
   }
 
   useEffect(() => {
@@ -48,6 +48,7 @@ export default function Signup() {
   return (
     <div className="p-4 h-[70vh] flex items-center">
       <form
+        action="submit"
         onSubmit={onSignUp}
         className="p-5 flex flex-col gap-5 mx-auto max-w-sm rounded-md "
       >
