@@ -8,11 +8,14 @@ connect();
 
 export async function POST(request: NextRequest) {
   try {
+    // expect the request using NextRequest
     const reqBody = await request.json();
+    // desctructurting the request data
     const { email, password } = reqBody;
-
+    // find user data ss per the inoput from the client
     const user = await User.findOne({ email });
     console.log(user, "route Login");
+    // not found message
     if (!user) {
       return NextResponse.json({
         message: "User does not exist!",
