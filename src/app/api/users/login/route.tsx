@@ -59,14 +59,3 @@ export async function POST(request: NextRequest) {
     });
   }
 }
-
-// expecting json from the post request
-// Desstructuring the json
-// check if user not exists resturn user not exits
-// check is password correct
-
-// generate hash password
-// passing aslt with password
-// a new user with hashed password and same json
-// save to database
-//  provide response to the client

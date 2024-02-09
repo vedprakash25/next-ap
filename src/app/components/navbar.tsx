@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <header className=" flex gap-5 py-3">
+    <header className="flex justify-center border w-fit mx-auto rounded-full mt-5 px-16 gap-5 py-3">
       <Link href="/">Home</Link>
       <Link href="/login">Login</Link>
       <Link href="/signup">Signup</Link>
