@@ -3,8 +3,10 @@ import RootLayout from "./layout";
 
 const Home: React.FC = () => {
   return (
-    <div className="">
-      <h1>App</h1>
+    <div className="flex justify-center h-screen items-center pb-20 px-10">
+      <h1 className="text-3xl">
+        This is next app, trying to find the purpose of itself!
+      </h1>
     </div>
   );
 };

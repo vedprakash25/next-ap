@@ -21,7 +21,7 @@ export default function Login() {
       setLoading(true);
       const res = await axios.post("/api/users/login", user);
       console.log("server response", res.data);
-      router.push("/profile");
+      router.push("/user");
     } catch (error: any) {
       console.log(error.message);
     } finally {

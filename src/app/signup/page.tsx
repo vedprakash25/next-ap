@@ -1,10 +1,9 @@
 "use client";
-import React, { FormEvent, SyntheticEvent, useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { NextFetchEvent } from "next/server";
 
 export default function Signup() {
   const [user, setUser] = useState({
