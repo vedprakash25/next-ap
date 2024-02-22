@@ -51,7 +51,11 @@ export default function Signup() {
         onSubmit={onSignUp}
         className="p-5 flex flex-col gap-5 mx-auto max-w-sm rounded-md "
       >
-        <h1 className="text-center">{loading ? "Processing.." : "Signup"}</h1>
+        {loading ? (
+          <h1 className="text-center text-3xl">Processing...</h1>
+        ) : (
+          <h1 className="text-center text-3xl">Singup</h1>
+        )}
         <input
           onChange={(e) => setUser({ ...user, username: e.target.value })}
           className="p-2 text-black rounded-md"

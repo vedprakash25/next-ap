@@ -21,7 +21,7 @@ export default function Login() {
       setLoading(true);
       const res = await axios.post("/api/users/login", user);
       console.log("server response", res.data);
-      router.push("/user");
+      router.push("/user/profile");
     } catch (error: any) {
       console.log(error.message);
     } finally {
@@ -42,7 +42,12 @@ export default function Login() {
         onSubmit={onLogin}
         className="p-5 flex flex-col gap-5 mx-auto max-w-sm rounded-md"
       >
-        <h1 className="text-center">{loading ? "Processing..." : "Login"}</h1>
+        {loading ? (
+          <h1 className="text-center text-3xl">Processing...</h1>
+        ) : (
+          <h1 className="text-center text-3xl">Login</h1>
+        )}
+
         <input
           onChange={(e) => setUser({ ...user, email: e.target.value })}
           className="p-2 rounded-md text-black"

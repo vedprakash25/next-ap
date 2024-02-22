@@ -8,24 +8,29 @@ export default function Navbar() {
   const pathname = usePathname();
   return (
     <div className="relative">
-      <header className="lg:flex hidden justify-center w-fit mx-auto rounded-full mt-5 px-16 gap-5 py-3 border-2 border-gray-500">
-        <Link href="/" className={pathname === "/" ? "text-red-400" : ""}>
+      <header className="lg:flex hidden font-light justify-center w-fit mx-auto rounded-full mt-5 px-16 gap-5 py-3 border-2 border-gray-500">
+        <Link
+          href="/"
+          className={pathname === "/" ? "text-white " : "text-gray-400"}
+        >
           Home
         </Link>
         <Link
-          className={pathname === "/login" ? "text-red-400" : ""}
+          className={pathname === "/login" ? "text-white " : "text-gray-400"}
           href="/login"
         >
           Login
         </Link>
         <Link
-          className={pathname === "/signup" ? "text-red-400" : ""}
+          className={pathname === "/signup" ? "text-white " : "text-gray-400"}
           href="/signup"
         >
           Signup
         </Link>
         <Link
-          className={pathname === "/user/profile" ? "text-red-400" : ""}
+          className={
+            pathname === "/user/profile" ? "text-white " : "text-gray-400"
+          }
           href="/user/profile"
         >
           Profile
@@ -52,23 +57,26 @@ export default function Navbar() {
         } w-full rounded-xl overflow-hidden`}
         onClick={() => (isMenu ? setMenu(false) : setMenu(true))}
       >
-        <Link className={pathname === "/" ? "text-red-400" : ""} href="/">
+        <Link
+          className={pathname === "/" ? "text-white " : "text-gray-400"}
+          href="/"
+        >
           Home
         </Link>
         <Link
-          className={pathname === "/login" ? "text-red-400" : ""}
+          className={pathname === "/login" ? "text-white " : "text-gray-400"}
           href="/login"
         >
           Login
         </Link>
         <Link
-          className={pathname === "/signup" ? "text-red-400" : ""}
+          className={pathname === "/signup" ? "text-white " : "text-gray-400"}
           href="/signup"
         >
           Signup
         </Link>
         <Link
-          className={pathname === "/user" ? "text-red-400" : ""}
+          className={pathname === "/user" ? "text-white " : "text-gray-400"}
           href="/user"
         >
           Profile

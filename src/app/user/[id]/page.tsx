@@ -27,6 +27,7 @@ export default function Profile({ children }: { children: React.ReactNode }) {
     try {
       const req: any = await axios.get("/api/users/me");
       setData(req.data.data);
+      console.log(data);
       return req.data.data;
     } catch (error: any) {
       console.log(error.message);
@@ -35,6 +36,7 @@ export default function Profile({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     getUserDetails();
+    console.log(data);
   }, []);
 
   const Profile = (data: any) => {
